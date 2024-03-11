@@ -59,7 +59,7 @@ if(!$found){
 $files1 = dirToArray("../Auths");
 for ($i = 0; $i < count($files1); $i++) {
   if(strstr($files1[$i], $check)){
-    echo "https://monkeyys.000webhostapp.com/Auths/$files1[$i]";
+    echo "https://efial.wtf/Backend/Auths/$files1[$i]";
     return;
   }
 }
@@ -72,6 +72,6 @@ $txt = file_get_contents("../Auths/aAuth.php");
 fwrite($myfile, $txt);
 fclose($myfile);
 
-echo("https://monkeyys.000webhostapp.com/Auths/$check-$ran.php");
+echo("https://efial.wtf/Backend/Auths/$check-$ran.php");
 
 ?>
