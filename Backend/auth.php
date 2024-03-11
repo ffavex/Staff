@@ -77,7 +77,7 @@ $returnKey = $Key;
 $returnValue = "Continue+$returnKey";
 
 // Construct the link with the parameter
-$link = "https://monkeyys.000webhostapp.com/test-auth.php?req=$Exploit=$Key";
+$link = "https://efial.wtf/Backend/test-auth.php?req=$Exploit=$Key";
 
 echo "<a href='$link'>$returnValue</a>";
 ?>
