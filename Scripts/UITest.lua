@@ -1392,12 +1392,6 @@ do
             Visible = page.open
         }, section.visibleContent)
         --
-        local toggle__gradient = utility:Create("Image", {Vector2.new(0,0), toggle_frame}, {
-            Size = utility:Size(1, 0, 1, 0, toggle_frame),
-            Position = utility:Position(0, 0, 0 , 0, toggle_frame),
-            Transparency = 0.5,
-            Visible = page.open
-        }, section.visibleContent)
         --
         local toggle_title = utility:Create("TextLabel", {Vector2.new(23,toggle.axis + (15/2) - (utility:GetTextBounds(name, theme.textsize, theme.font).Y/2)), section.section_frame}, {
             Text = name,
@@ -1409,7 +1403,6 @@ do
             Visible = page.open
         }, section.visibleContent)
         --
-        utility:LoadImage(toggle__gradient, "gradient", "https://i.imgur.com/MV97Xtc.jpeg")
         --
         function toggle:Get()
             return toggle.current
@@ -1854,12 +1847,6 @@ do
                 Visible = page.open
             }, section.visibleContent)
             --
-            local keybind__gradient = utility:Create("Image", {Vector2.new(0,0), keybind_frame}, {
-                Size = utility:Size(1, 0, 1, 0, keybind_frame),
-                Position = utility:Position(0, 0, 0 , 0, keybind_frame),
-                Transparency = 0.5,
-                Visible = page.open
-            }, section.visibleContent)
             --
             local keybind_value = utility:Create("TextLabel", {Vector2.new(keybind_outline.Size.X/2,1), keybind_outline}, {
                 Text = "...",
@@ -1872,7 +1859,6 @@ do
                 Visible = page.open
             }, section.visibleContent)
             --
-            utility:LoadImage(keybind__gradient, "gradient", "https://i.imgur.com/MV97Xtc.jpeg")
             --
             function keybind:Shorten(string)
                 for i,v in pairs(shortenedInputs) do
@@ -2021,14 +2007,7 @@ do
                             Visible = page.open
                         }, keybind.modemenu.drawings)
                         --
-                        local keybind__gradient = utility:Create("Image", {Vector2.new(0,0), modemenu_frame}, {
-                            Size = utility:Size(1, 0, 1, 0, modemenu_frame),
-                            Position = utility:Position(0, 0, 0 , 0, modemenu_frame),
-                            Transparency = 0.5,
-                            Visible = page.open
-                        }, keybind.modemenu.drawings)
                         --
-                        utility:LoadImage(keybind__gradient, "gradient", "https://i.imgur.com/MV97Xtc.jpeg")
                         --
                         for i,v in pairs({"Always", "Toggle", "Hold"}) do
                             local button_title = utility:Create("TextLabel", {Vector2.new(modemenu_frame.Size.X/2,15 * (i-1)), modemenu_frame}, {
@@ -2131,12 +2110,6 @@ do
             Visible = page.open
         }, section.visibleContent)
         --
-        local slider__gradient = utility:Create("Image", {Vector2.new(0,0), slider_frame}, {
-            Size = utility:Size(1, 0, 1, 0, slider_frame),
-            Position = utility:Position(0, 0, 0 , 0, slider_frame),
-            Transparency = 0.5,
-            Visible = page.open
-        }, section.visibleContent)
         --
         local textBounds = utility:GetTextBounds(name, theme.textsize, theme.font)
         local slider_value = utility:Create("TextLabel", {Vector2.new(slider_outline.Size.X/2,(slider_outline.Size.Y/2) - (textBounds.Y/2)), slider_outline}, {
@@ -2150,7 +2123,6 @@ do
             Visible = page.open
         }, section.visibleContent)
         --
-        utility:LoadImage(slider__gradient, "gradient", "https://i.imgur.com/MV97Xtc.jpeg")
         --
         function slider:Set(value)
             slider.current = math.clamp(math.round(value * slider.decimals) / slider.decimals, slider.min, slider.max)
@@ -2236,12 +2208,6 @@ do
             Visible = page.open
         }, section.visibleContent)
         --
-        local button_gradient = utility:Create("Image", {Vector2.new(0,0), button_frame}, {
-            Size = utility:Size(1, 0, 1, 0, button_frame),
-            Position = utility:Position(0, 0, 0 , 0, button_frame),
-            Transparency = 0.5,
-            Visible = page.open
-        }, section.visibleContent)
         --
         local button_title = utility:Create("TextLabel", {Vector2.new(button_frame.Size.X/2,1), button_frame}, {
             Text = name,
@@ -2254,7 +2220,6 @@ do
             Visible = page.open
         }, section.visibleContent)
         --
-        utility:LoadImage(button_gradient, "gradient", "https://i.imgur.com/MV97Xtc.jpeg")
         --
         library.began[#library.began + 1] = function(Input)
             if Input.UserInputType == Enum.UserInputType.MouseButton1 and button_outline.Visible and window.isVisible and utility:MouseOverDrawing({section.section_frame.Position.X, section.section_frame.Position.Y + button.axis, section.section_frame.Position.X + section.section_frame.Size.X, section.section_frame.Position.Y + button.axis + 20}) and not window:IsOverContent() then
@@ -2306,12 +2271,6 @@ do
                 Visible = page.open
             }, section.visibleContent)
             --
-            local button_gradient = utility:Create("Image", {Vector2.new(0,0), button_frame}, {
-                Size = utility:Size(1, 0, 1, 0, button_frame),
-                Position = utility:Position(0, 0, 0 , 0, button_frame),
-                Transparency = 0.5,
-                Visible = page.open
-            }, section.visibleContent)
             --
             local button_title = utility:Create("TextLabel", {Vector2.new(button_frame.Size.X/2,1), button_frame}, {
                 Text = buttons[i][1],
@@ -2324,7 +2283,6 @@ do
                 Visible = page.open
             }, section.visibleContent)
             --
-            utility:LoadImage(button_gradient, "gradient", "https://i.imgur.com/MV97Xtc.jpeg")
             --
             library.began[#library.began + 1] = function(Input)
                 if Input.UserInputType == Enum.UserInputType.MouseButton1 and button_outline.Visible and window.isVisible and utility:MouseOverDrawing({section.section_frame.Position.X + (i == 2 and (section.section_frame.Size.X/2) or 0), section.section_frame.Position.Y + button.axis, section.section_frame.Position.X + section.section_frame.Size.X - (i == 1 and (section.section_frame.Size.X/2) or 0), section.section_frame.Position.Y + button.axis + 20}) and not window:IsOverContent() then
@@ -2382,12 +2340,6 @@ do
             Visible = page.open
         }, section.visibleContent)
         --
-        local dropdown__gradient = utility:Create("Image", {Vector2.new(0,0), dropdown_frame}, {
-            Size = utility:Size(1, 0, 1, 0, dropdown_frame),
-            Position = utility:Position(0, 0, 0 , 0, dropdown_frame),
-            Transparency = 0.5,
-            Visible = page.open
-        }, section.visibleContent)
         --
         local dropdown_value = utility:Create("TextLabel", {Vector2.new(3,dropdown_frame.Size.Y/2 - 7), dropdown_frame}, {
             Text = dropdown.current,
@@ -2406,7 +2358,6 @@ do
         }, section.visibleContent);dropdown["dropdown_image"] = dropdown_image
         --
         utility:LoadImage(dropdown_image, "arrow_down", "https://i.imgur.com/tVqy0nL.png")
-        utility:LoadImage(dropdown__gradient, "gradient", "https://i.imgur.com/MV97Xtc.jpeg")
         --
         function dropdown:Update()
             if dropdown.open and dropdown.holder.inline then
@@ -2594,12 +2545,6 @@ do
             Visible = page.open
         }, section.visibleContent)
         --
-        local multibox__gradient = utility:Create("Image", {Vector2.new(0,0), multibox_frame}, {
-            Size = utility:Size(1, 0, 1, 0, multibox_frame),
-            Position = utility:Position(0, 0, 0 , 0, multibox_frame),
-            Transparency = 0.5,
-            Visible = page.open
-        }, section.visibleContent)
         --
         local multibox_value = utility:Create("TextLabel", {Vector2.new(3,multibox_frame.Size.Y/2 - 7), multibox_frame}, {
             Text = "",
@@ -2618,7 +2563,6 @@ do
         }, section.visibleContent);multibox["multibox_image"] = multibox_image
         --
         utility:LoadImage(multibox_image, "arrow_down", "https://i.imgur.com/tVqy0nL.png")
-        utility:LoadImage(multibox__gradient, "gradient", "https://i.imgur.com/MV97Xtc.jpeg")
         --
         function multibox:Update()
             if multibox.open and multibox.holder.inline then
@@ -2842,12 +2786,6 @@ do
             Visible = page.open
         }, section.visibleContent)
         --
-        local keybind__gradient = utility:Create("Image", {Vector2.new(0,0), keybind_frame}, {
-            Size = utility:Size(1, 0, 1, 0, keybind_frame),
-            Position = utility:Position(0, 0, 0 , 0, keybind_frame),
-            Transparency = 0.5,
-            Visible = page.open
-        }, section.visibleContent)
         --
         local keybind_value = utility:Create("TextLabel", {Vector2.new(keybind_outline.Size.X/2,1), keybind_outline}, {
             Text = "...",
@@ -2860,7 +2798,6 @@ do
             Visible = page.open
         }, section.visibleContent)
         --
-        utility:LoadImage(keybind__gradient, "gradient", "https://i.imgur.com/MV97Xtc.jpeg")
         --
         function keybind:Shorten(string)
             for i,v in pairs(shortenedInputs) do
@@ -3003,14 +2940,6 @@ do
                         Visible = page.open
                     }, keybind.modemenu.drawings)
                     --
-                    local keybind__gradient = utility:Create("Image", {Vector2.new(0,0), modemenu_frame}, {
-                        Size = utility:Size(1, 0, 1, 0, modemenu_frame),
-                        Position = utility:Position(0, 0, 0 , 0, modemenu_frame),
-                        Transparency = 0.5,
-                        Visible = page.open
-                    }, keybind.modemenu.drawings)
-                    --
-                    utility:LoadImage(keybind__gradient, "gradient", "https://i.imgur.com/MV97Xtc.jpeg")
                     --
                     for i,v in pairs({"Always", "Toggle", "Hold"}) do
                         local button_title = utility:Create("TextLabel", {Vector2.new(modemenu_frame.Size.X/2,15 * (i-1)), modemenu_frame}, {
@@ -3830,12 +3759,6 @@ do
             Visible = page.open
         }, section.visibleContent)
         --
-        local configLoader_gradient = utility:Create("Image", {Vector2.new(0,0), configLoader_frame}, {
-            Size = utility:Size(1, 0, 1, 0, configLoader_frame),
-            Position = utility:Position(0, 0, 0 , 0, configLoader_frame),
-            Transparency = 0.5,
-            Visible = page.open
-        }, section.visibleContent)
         --
         for i=1, 8 do
             local config_title = utility:Create("TextLabel", {Vector2.new(configLoader_frame.Size.X/2,2 + (18 * (i-1))), configLoader_frame}, {
@@ -3852,7 +3775,6 @@ do
             configLoader.buttons[i] = config_title
         end
         --
-        utility:LoadImage(configLoader_gradient, "gradient", "https://i.imgur.com/MV97Xtc.jpeg")
         --
         function configLoader:Refresh()
             for i,v in pairs(configLoader.buttons) do
