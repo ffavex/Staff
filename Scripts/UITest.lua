@@ -1484,17 +1484,6 @@ do
                 Visible = page.open
             }, section.visibleContent)
             --
-            local colorpicker__gradient = utility:Create("Image", {Vector2.new(0,0), colorpicker_frame}, {
-                Size = utility:Size(1, 0, 1, 0, colorpicker_frame),
-                Position = utility:Position(0, 0, 0 , 0, colorpicker_frame),
-                Transparency = 0.5,
-                Visible = page.open
-            }, section.visibleContent)
-            --
-            if transp then
-                utility:LoadImage(colorpicker__transparency, "cptransp", "https://i.imgur.com/IIPee2A.png")
-            end
-            utility:LoadImage(colorpicker__gradient, "gradient", "https://i.imgur.com/MV97Xtc.jpeg")
             --
             function colorpicker:Set(color, transp_val)
                 if typeof(color) == "table" then
@@ -3111,12 +3100,6 @@ do
             Visible = page.open
         }, section.visibleContent)
         --
-        local colorpicker__gradient = utility:Create("Image", {Vector2.new(0,0), colorpicker_frame}, {
-            Size = utility:Size(1, 0, 1, 0, colorpicker_frame),
-            Position = utility:Position(0, 0, 0 , 0, colorpicker_frame),
-            Transparency = 0.5,
-            Visible = page.open
-        }, section.visibleContent)
         --
         local colorpicker_title = utility:Create("TextLabel", {Vector2.new(4,colorpicker.axis + (15/2) - (utility:GetTextBounds(name, theme.textsize, theme.font).Y/2)), section.section_frame}, {
             Text = name,
@@ -3128,10 +3111,6 @@ do
             Visible = page.open
         }, section.visibleContent)
         --
-        if transp then
-            utility:LoadImage(colorpicker__transparency, "cptransp", "https://i.imgur.com/IIPee2A.png")
-        end
-        utility:LoadImage(colorpicker__gradient, "gradient", "https://i.imgur.com/MV97Xtc.jpeg")
         --
         function colorpicker:Set(color, transp_val)
             if typeof(color) == "table" then
@@ -3498,17 +3477,7 @@ do
                 Visible = page.open
             }, section.visibleContent)
             --
-            local colorpicker__gradient = utility:Create("Image", {Vector2.new(0,0), colorpicker_frame}, {
-                Size = utility:Size(1, 0, 1, 0, colorpicker_frame),
-                Position = utility:Position(0, 0, 0 , 0, colorpicker_frame),
-                Transparency = 0.5,
-                Visible = page.open
-            }, section.visibleContent)
             --
-            if transp then
-                utility:LoadImage(colorpicker__transparency, "cptransp", "https://i.imgur.com/IIPee2A.png")
-            end
-            utility:LoadImage(colorpicker__gradient, "gradient", "https://i.imgur.com/MV97Xtc.jpeg")
             --
             function colorpicker:Set(color, transp_val)
                 if typeof(color) == "table" then
