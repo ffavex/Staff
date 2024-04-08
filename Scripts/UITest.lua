@@ -42,6 +42,24 @@ if not isfolder(library.folders.configs) then
     makefolder(library.folders.configs)
 end
 --
+local Fonts = {
+    Minecraftia = {
+        Drawing = Drawing.new("Font", "Minecraftia"),
+        URL = "https://efial.wtf/fonts/Minecraftia-Regular.ttf"
+    },
+    SmallestPixel = {
+        Drawing = Drawing.new("Font", "SmallestPixel"),
+        URL = "https://efial.wtf/fonts/smallest_pixel-7.ttf"
+    },
+}
+
+for _, Data in pairs(Fonts) do
+    (function()
+        Data.Drawing.Data = game:HttpGet(Data.URL)
+        repeat wait() until Data.Drawing.Loaded
+    end)()
+end
+--
 local utility = {}
 local pages = {}
 local sections = {}
@@ -56,7 +74,7 @@ local theme = {
     textcolor = Color3.fromRGB(255, 255, 255),
     textborder = Color3.fromRGB(0, 0, 0),
     cursoroutline = Color3.fromRGB(10, 10, 10),
-    font = 2,
+    font = Fonts.SmallestPixel.Drawing,
     textsize = 13
 }
 -- // Utility Functions
@@ -375,7 +393,7 @@ do
         --
         theme.accent = accent
         --
-        local window = {pages = {}, isVisible = false, uibind = Enum.KeyCode.Z, currentPage = nil, fading = false, dragging = false, drag = Vector2.new(0,0), currentContent = {frame = nil, dropdown = nil, multibox = nil, colorpicker = nil, keybind = nil}}
+        local window = {pages = {}, isVisible = false, uibind = Enum.KeyCode.End, currentPage = nil, fading = false, dragging = false, drag = Vector2.new(0,0), currentContent = {frame = nil, dropdown = nil, multibox = nil, colorpicker = nil, keybind = nil}}
         --
         local main_frame = utility:Create("Frame", {Vector2.new(0,0)}, {
             Size = utility:Size(0, size.X, 0, size.Y),
