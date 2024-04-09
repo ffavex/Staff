@@ -696,15 +696,12 @@ do
             --
             utility:Connection(rs.RenderStepped, function(fps)
                 library.shared.fps = math.round(1 / fps)
-                library.shared.ping = tonumber(string.split(stats.Network.ServerStatsItem["Data Ping"]:GetValueString(), " ")[1] .. "")
             end)
             --
-            watermark_title.Text = string.format("$$ Splix || uid : %u || ping : %i || fps : %u", 1, tostring(library.shared.ping), library.shared.fps)
             window.watermark:UpdateSize()
             --
             spawn(function()
                 while wait(0.1) do
-                    watermark_title.Text = string.format("$$ Splix || uid : %u || ping : %i || fps : %u", 1, tostring(library.shared.ping), library.shared.fps)
                     window.watermark:UpdateSize()
                 end
             end)
