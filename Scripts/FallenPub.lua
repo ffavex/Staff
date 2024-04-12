@@ -2,10 +2,10 @@ local FallenId = 10228136016
 writefile("ECLIPSE_KEY.txt", script_key)
 
 if game.PlaceId == FallenId then
-    queue_on_teleport([[
+        queue_on_teleport([[
         pcall(function()
             script_key = readfile("ECLIPSE_KEY.txt")
-            repeat task.wait() until getactors()[1] and getactors()[2] 
+            repeat task.wait() until getactors()[1] and getactors()[2] repeat wait() until game:GetService("Players").LocalPlayer.Character
             loadstring(game:HttpGet("https://raw.githubusercontent.com/BurnHubz/eclipse/main/checkcaller.lua"))();
             task.wait(1);
             memorystats.cache("Gui")
